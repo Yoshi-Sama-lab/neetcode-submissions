@@ -1,0 +1,25 @@
+koko eating banana
+
+so we have an array piles[i] which have the piles of banana which koko will eat
+
+and we will be provided an integer h, which is the number of time koko can use to eat all those bananas
+
+now we gotta find the minimum rate k at which koko needs to eat so it covers all the banana in that specific h hours
+
+constraint, if my k is more than one pile, we can still eat the next pile in the next hour.
+
+now if we try deducing this, lets take the 
+
+
+so basically we will define the low as 1 while the high as the highest value in the pile, as eating any faster than that will result in no more gain
+
+
+Important concept, rounding using the ceil which is a double orientation on an int will cause problem that's why
+inside of using Math.ceil(a/b) which will not work we will use either
+Math.ceil((double)a/b) but that's a hassle
+so instead we will use
+
+(a+b-1)/b which also acts as a Math.ceil 
+
+ 
+
