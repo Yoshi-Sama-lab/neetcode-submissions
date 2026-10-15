@@ -1,0 +1,33 @@
+Search in rotated sorted array
+
+target is given to us and we have to search an element in a rotated array\For example, the array nums = [1,2,3,4,5,6] might become:
+
+[3,4,5,6,1,2] if it was rotated 4 times.
+[1,2,3,4,5,6] if it was rotated 6 times.
+
+return the index of the target if found else return -1 
+
+Assumption all the elements in the array are unique.
+
+
+[3,4,5,6,7,1,2]
+mid will be 6
+target is 1
+right is 2
+if target>right: this simply means the target is on the left side
+
+if target<right: this simply means the target is on the right side but how right for it to be even considered right but it became left. so if target<right and target>nums[mid] then we will say target is on right side
+
+else if target<right but target<nums[mid] that means target is on the left side
+
+
+but this whole assumption was incorrect, instead we will first trying finding the point of inflection from where the two arrays are differentiated
+
+if nums[left] is less than or equal to nums[mid] than means this is a left side sorted array
+now inside the sorted array we will try implementing the search
+
+if the target is greater than or equal nums[left] but smaller than nums[mid] than means the target lies there and we will do right=mid-1
+else left=mid+1
+
+similarly the same will be done on for the right side
+ 
